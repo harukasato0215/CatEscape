@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ArowController : MonoBehaviour
 {
-    GameObject player;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        this.player = GameObject.Find("player_0");
+        this.player = GameObject.Find("player");
     }
 
     // Update is called once per frame
@@ -30,6 +30,8 @@ public class ArowController : MonoBehaviour
 
         if (d < r1 + r2)
         {
+            GameObject director = GameObject.Find("GameDirector");
+            director.GetComponent<GameDirector>().DecreaseHp();
             Destroy(gameObject);
         }
     }
