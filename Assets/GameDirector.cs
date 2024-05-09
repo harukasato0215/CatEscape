@@ -15,6 +15,10 @@ public class GameDirector : MonoBehaviour
     public void DecreaseHp()
     {
         this.hpGauge.fillAmount -= 0.1f;
+        if (this.hpGauge.fillAmount <= 0)
+        {
+            Time.timeScale = 0f;
+        }
     }
 
 
